@@ -1,0 +1,96 @@
+<div class="w-menu">
+ <div class="menu">
+ <ul class="menu-main">
+ <li><a class="transition" href="" title="<?php echo \htmlentities(__('web.home')??'', ENT_QUOTES, 'UTF-8', false); ?>"><span><?php echo \htmlentities(__('web.home')??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ </li>
+ <li><a class="transition <?php echo \htmlentities(($com ?? '') == 'gioi-thieu' ? 'active' : ''??'', ENT_QUOTES, 'UTF-8', false); ?>" href="gioi-thieu"
+ title="<?php echo \htmlentities(__('web.gioithieu')??'', ENT_QUOTES, 'UTF-8', false); ?>"><span><?php echo \htmlentities(__('web.gioithieu')??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ <?php if(!empty($aboutMenu)): ?>
+ <ul>
+ <?php $__currentLoopData = $aboutMenu ?? []; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $vlist): $loop = $this->incrementLoopIndices();  ?>
+ <li>
+ <a class="transition" href="<?php echo \htmlentities(url('slugweb', ['slug' => $vlist['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($vlist['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php echo \htmlentities($vlist['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a>
+ </li>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <li>
+ <a class="transition" href="he-thong-phan-phoi" title="Hệ thống phân phối">
+ Hệ thống phân phối
+ </a>
+ </li>
+ </ul>
+ <?php endif; ?>
+ </li>
+ <li>
+ <a class="transition <?php echo \htmlentities(($com ?? '') == 'san-pham' ? 'active' : ''??'', ENT_QUOTES, 'UTF-8', false); ?>" href="san-pham"
+ title="<?php echo \htmlentities(__('web.sanpham')??'', ENT_QUOTES, 'UTF-8', false); ?>"><span><?php echo \htmlentities(__('web.sanpham')??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ <?php if(!empty($listProductMenu)): ?>
+ <ul>
+ <?php $__currentLoopData = $listProductMenu ?? []; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $vlist): $loop = $this->incrementLoopIndices();  ?>
+ <li>
+ <a class="transition" href="<?php echo \htmlentities(url('slugweb', ['slug' => $vlist['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($vlist['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php echo \htmlentities($vlist['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a>
+ <?php if($vlist->getCategoryCats()->get()->isNotEmpty()): ?>
+ <ul>
+ <?php $__currentLoopData = $vlist->getCategoryCats()->get() ?? []; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $vcat): $loop = $this->incrementLoopIndices();  ?>
+ <li>
+ <a class="transition"
+ href="<?php echo \htmlentities(url('slugweb', ['slug' => $vcat['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($vcat['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php echo \htmlentities($vcat['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a>
+ </li>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </ul>
+ <?php endif; ?>
+ </li>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </ul>
+ <?php endif; ?>
+ </li>
+ <li><a class="transition <?php echo \htmlentities(($com ?? '') == 'dat-hang' ? 'active' : ''??'', ENT_QUOTES, 'UTF-8', false); ?>" href="dat-hang"
+ title="<?php echo \htmlentities(__('web.dathang')??'', ENT_QUOTES, 'UTF-8', false); ?>"><span><?php echo \htmlentities(__('web.dathang')??'', ENT_QUOTES, 'UTF-8', false); ?></span></a></li>
+ <li><a class="transition <?php echo \htmlentities(($com ?? '') == 'du-an' ? 'active' : ''??'', ENT_QUOTES, 'UTF-8', false); ?>" href="du-an"
+ title="<?php echo \htmlentities(__('web.duan')??'', ENT_QUOTES, 'UTF-8', false); ?>"><span><?php echo \htmlentities(__('web.duan')??'', ENT_QUOTES, 'UTF-8', false); ?></span></a></li>
+ <li>
+ <a class="transition <?php echo \htmlentities(($com ?? '') == 'tin-tuc' ? 'active' : ''??'', ENT_QUOTES, 'UTF-8', false); ?>" href="tin-tuc"
+ title="<?php echo \htmlentities(__('web.tintuc')??'', ENT_QUOTES, 'UTF-8', false); ?>"><span><?php echo \htmlentities(__('web.tintuc')??'', ENT_QUOTES, 'UTF-8', false); ?></span></a>
+ <?php if(!empty($listNewsMenu)): ?>
+ <ul>
+ <?php $__currentLoopData = $listNewsMenu ?? []; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $vlist): $loop = $this->incrementLoopIndices();  ?>
+ <li>
+ <a class="transition" href="<?php echo \htmlentities(url('slugweb', ['slug' => $vlist['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($vlist['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <?php echo \htmlentities($vlist['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a>
+ </li>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </ul>
+ <?php endif; ?>
+ </li>
+ <li><a class="transition <?php echo \htmlentities(($com ?? '') == 'lien-he' ? 'active' : ''??'', ENT_QUOTES, 'UTF-8', false); ?>" href="<?php echo \htmlentities(url('lien-he')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities(__('web.lienhe')??'', ENT_QUOTES, 'UTF-8', false); ?>"><span><?php echo \htmlentities(__('web.lienhe')??'', ENT_QUOTES, 'UTF-8', false); ?></span></a></li>
+
+ <div class="search w-clear">
+ <input class="form-control" type="text" id="keyword" placeholder="<?php echo \htmlentities(__('web.timkiemsanpham')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ onkeypress="doEnter(event,'keyword');"
+ value="<?php echo \htmlentities(!empty($_GET['keyword']) ? $_GET['keyword'] : ''??'', ENT_QUOTES, 'UTF-8', false); ?>" />
+ <p onclick="onSearch('keyword');">
+ <img src="assets/images/h-search.png" alt="Search">
+ </p>
+ </div>
+ </ul>
+ </div>
+</div>

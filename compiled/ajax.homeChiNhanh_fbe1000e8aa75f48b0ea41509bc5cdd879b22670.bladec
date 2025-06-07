@@ -1,0 +1,4 @@
+<div class="d-maps">
+ <?php echo Func::decodeHtmlChars($ajaxChiNhanh['iframe'] ?? ''); ?>
+
+</div>

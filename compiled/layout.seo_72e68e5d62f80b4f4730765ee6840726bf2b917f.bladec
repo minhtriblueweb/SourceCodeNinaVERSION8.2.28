@@ -1,0 +1,7 @@
+<ul class="h-card hidden">
+ <li class="h-fn fn"><?php echo $setting['namevi']; ?></li>
+ <li class="h-org org"><?php echo $setting['namevi']; ?></li>
+ <li class="h-tel tel"><?php echo \htmlentities(preg_replace('/[^0-9]/', '', $optSetting['hotline'])??'', ENT_QUOTES, 'UTF-8', false); ?></li>
+ <li><a class="u-url ul" href="<?php echo \htmlentities(Seo::get('url')??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities(Seo::get('url')??'', ENT_QUOTES, 'UTF-8', false); ?></a></li>
+</ul>
+<h1 class="hidden-seoh hidden"><?php echo \htmlentities(Seo::get('h1')??'', ENT_QUOTES, 'UTF-8', false); ?></h1>

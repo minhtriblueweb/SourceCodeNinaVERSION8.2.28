@@ -1,0 +1,41 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+    rel="stylesheet">
+
+
+<style>
+    .bg-slide {
+        background: url({{ assets_photo('photo', '', $bannerSlide['photo'] ?? '', '') }}) no-repeat center center;
+        background-size: cover;
+        position: relative;
+    }
+</style>
+
+
+{!! cssminify()->set('css/animate.min.css');
+cssminify()->set('css/style-tailwind.css');
+cssminify()->set('bootstrap/bootstrap.css');
+cssminify()->set('fontawesome640/all.css');
+cssminify()->set('owlcarousel2/owl.carousel.css');
+cssminify()->set('owlcarousel2/owl.theme.default.css');
+cssminify()->set('holdon/HoldOn.css');
+cssminify()->set('holdon/HoldOn-style.css');
+cssminify()->set('confirm/confirm.css');
+cssminify()->set('simplenotify/simple-notify.css');
+cssminify()->set('fancybox5/fancybox.css');
+cssminify()->set('slick/slick.css');
+cssminify()->set('slick/slick-theme.css');
+cssminify()->set('slick/slick-style.css');
+cssminify()->set('photobox/photobox.css');
+cssminify()->set('fotorama/fotorama.css');
+cssminify()->set('mmenu/mmenu.css');
+cssminify()->set('aos/aos.css');
+cssminify()->set('fotorama/fotorama-style.css');
+cssminify()->set('admin/toastify/toastify.css');
+cssminify()->set('css/cart.css');
+cssminify()->set('css/style.css');
+cssminify()->set('css/media.css');
+echo cssminify()->get() !!}
+@stack('styles')

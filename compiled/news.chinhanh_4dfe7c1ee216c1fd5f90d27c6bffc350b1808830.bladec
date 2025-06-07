@@ -1,0 +1,61 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+ <section>
+ <div class="wrap-content py-3">
+ <div class="title-main">
+ <span><?php echo \htmlentities($titleMain??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+
+ <div class="input-cart mb-3">
+ <select class=" form-select form-control text-sm">
+ <option value="">Chọn Tỉnh / Thành</option>
+ <?php $__currentLoopData = $newsList ?? []; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $k => $v): $loop = $this->incrementLoopIndices();  ?>
+ <option value="<?php echo \htmlentities($v->id??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></option>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </select>
+ <div class="invalid-feedback">Vui lòng chọn Tỉnh / Thành</div>
+ </div>
+
+ <?php if($news->isNotEmpty()): ?>
+ <div class="chinhanh-footer" id="chinhanh--index">
+ <div class="d-flex flex-wrap justify-content-between">
+ <div class="chinhanh-left mb-3">
+ <div class="chinhanh-contain">
+ <div class="layout-chinhanh-item">
+ <?php $__currentLoopData = $news; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div class="chinhanh-item js--chinhanh-item" data-id="<?php echo \htmlentities($v->id??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ data-url="<?php echo \htmlentities(url('show-chi-nhanh')??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <div class="chinhanh-item-left">
+ <img onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/60x60x2/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('news', '60x60x2', $v['photo'], 'thumbs')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($v->namevi??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </div>
+ <div class="chinhanh-item-right">
+ <h3 class="name-chinhanh-item text-split"><?php echo \htmlentities($v->namevi??'', ENT_QUOTES, 'UTF-8', false); ?></h3>
+ <p class="desc-chinhanh-item text-split"><i
+ class="fa-sharp fa-solid fa-location-dot text-warning pe-1"></i> Địa
+ chỉ:
+ <?php echo \htmlentities($v->address??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <p class="desc-chinhanh-item mb-0"><i
+ class="fa-sharp fa-solid fa-phone text-warning pe-1"></i> Điện
+ thoại:
+ <?php echo \htmlentities($v['phone']??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ <div class="chinhanh-right mb-3">
+ <div class="show-chi-nhanh">loading</div>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+ </div>
+ </section>
+<?php $this->stopSection(); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout'); } ?>

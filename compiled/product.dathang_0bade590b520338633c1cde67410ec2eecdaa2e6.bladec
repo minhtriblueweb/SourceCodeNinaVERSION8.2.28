@@ -1,0 +1,62 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+ <section>
+ <div class="max-width py-3">
+ <div class="title-main">
+ <span><?php echo \htmlentities($titleMain??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+
+ <?php $__currentLoopData = $productAll; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $klist => $vlist): $loop = $this->incrementLoopIndices();  ?>
+ <div class="position-relative">
+ <div class="child__news__title">
+ <span><?php echo \htmlentities($vlist->namevi??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ <div class="d-md-flex d-none">
+ <?php if($vlist->getCategoryCats()->get()->isNotEmpty()): ?>
+ <?php $__currentLoopData = $vlist->getCategoryCats()->get() ?? []; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $vcat): $loop = $this->incrementLoopIndices();  ?>
+ <a href="<?php echo \htmlentities($vcat->slugvi??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ class="child__news__btn text-decoration-none transition mx-3">
+ <?php echo \htmlentities($vcat->namevi??'', ENT_QUOTES, 'UTF-8', false); ?>
+
+ </a>
+ <strong>|</strong>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <?php endif; ?>
+ <a href="<?php echo \htmlentities($vlist->slugvi??'', ENT_QUOTES, 'UTF-8', false); ?>" class="child__news__btn text-decoration-none transition ms-3">
+ Xem thêm <i class="fa-sharp fa-solid fa-caret-right"></i>
+ </a>
+ </div>
+ </div>
+ <?php if($vlist->getItems()->get()->isNotEmpty()): ?>
+ <div class="row row-20">
+ <?php $__currentLoopData = $vlist->getItems()->get() ?? []; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div class="col-lg-3 col-md-4 col-6 col-20">
+ <?php  $this->startComponent('component.itemProduct', ['product' => $v]); ?>
+ <div class="attr-content-pro-detail d-none">
+ <div class="quantity-pro-detail">
+ <span class="quantity-minus-pro-detail">-</span>
+ <input type="text" class="qty-pro !outline-none !shadow-none !ring-0"
+ min="1" value="1" readonly="">
+ <span class="quantity-plus-pro-detail">+</span>
+ </div>
+ </div>
+ <div class="item-product-cart">
+ <a class="transition addcart text-decoration-none buynow"
+ data-id="<?php echo \htmlentities($v['id']??'', ENT_QUOTES, 'UTF-8', false); ?>" data-action="buynow">
+ <i class="fa-sharp fa-regular fa-cart-plus"></i>
+ </a>
+ </div>
+ <?php echo $this->renderComponent(); ?>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <?php endif; ?>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </section>
+<?php $this->stopSection(); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout'); } ?>

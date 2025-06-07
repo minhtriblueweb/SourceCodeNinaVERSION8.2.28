@@ -1,0 +1,518 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+ <?php if(!empty($about)): ?>
+ <div class="wrap-about padding-top-bottom">
+ <div class="wrap-content">
+ <div class="about__layout">
+ <div class="about__start">
+ <div class="title-about" data-aos="fade-up" data-aos-duration="1000">
+ <p class="slogan-about"><?php echo \htmlentities(__('web.gioithieu')??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <p class="name-about"><?php echo \htmlentities($about->descvi??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <h2 class="heading-about"><?php echo \htmlentities($about->namevi??'', ENT_QUOTES, 'UTF-8', false); ?></h2>
+ </div>
+ <div class="content-main w-clear" data-aos="fade-up" data-aos-duration="1000">
+ <?php echo Func::decodeHtmlChars($about->contentvi); ?></div>
+ <div class="row-gioithieu">
+ <?php $__currentLoopData = $gioithieuHot; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div class="col-gioithieu" data-aos="fade-up" data-aos-duration="1000">
+ <a href="<?php echo \htmlentities(url('slugweb', ['slug' => $v['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ class="item-gioithieu text-decoration-none transition" title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <span class="text-split"><img src="assets/images/i-check.png" alt="icon">
+ <?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ <div class="col-gioithieu" data-aos="fade-up" data-aos-duration="1000">
+ <a href="he-thong-phan-phoi" class="item-gioithieu text-decoration-none transition"
+ title="<?php echo \htmlentities(__('web.hethongphanphoi')??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <span class="text-split"><img src="assets/images/i-check.png" alt="icon">
+ <?php echo \htmlentities(__('web.hethongphanphoi')??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </a>
+ </div>
+ </div>
+
+ <div class="gt_xemthem">
+ <a href="gioi-thieu" class="text-decoration-none"
+ title="<?php echo \htmlentities(__('web.xemthem')??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities(__('web.xemthem')??'', ENT_QUOTES, 'UTF-8', false); ?></a>
+ </div>
+ </div>
+ <div class="about__end">
+ <div data-aos="fade-up" data-aos-duration="1000">
+ <div class="owl-page owl-carousel owl-theme" data-items="screen:0|items:1" data-rewind="1"
+ data-autoplay="1" data-loop="0" data-lazyload="0" data-mousedrag="1" data-touchdrag="1"
+ data-smartspeed="800" data-autoplayspeed="800" data-autoplaytimeout="5000" data-dots="0"
+ data-animations="animate__fadeInDown, animate__backInUp, animate__rollIn, animate__backInRight, animate__zoomInUp, animate__backInLeft, animate__rotateInDownLeft, animate__backInDown, animate__zoomInDown, animate__fadeInUp, animate__zoomIn"
+ data-nav="0" data-navcontainer=".control-about">
+ <a class="text-decoration-none scale-img hover-img radius-about" href="gioi-thieu"
+ title="<?php echo \htmlentities($setting->namevi??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img class="w-100"
+ onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/640x550x1/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('news', '640x550x1', $about['photo'], 'thumbs')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($setting->namevi??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </a>
+ <?php $__currentLoopData = $albumAbout; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div>
+ <a class="text-decoration-none scale-img hover-img radius-about" href="gioi-thieu"
+ title="<?php echo \htmlentities($setting->namevi??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img class="w-100"
+ onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/640x550x1/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('news', '640x550x1', $v['photo'], 'thumbs')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($setting->namevi??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <div class="control-about control-owl transition"></div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+
+ <?php if($thanhTuu->isNotEmpty()): ?>
+ <div class="wrap-thanhtuu" data-aos="fade-up" data-aos-duration="1000">
+ <div class="max-width">
+ <div class="position-relative">
+ <div class="owl-page owl-carousel owl-theme"
+ data-items="screen:0|items:2|margin:10,screen:425|items:2|margin:10,screen:575|items:3|margin:10,screen:767|items:4|margin:10,screen:991|items:5|margin:10,screen:1199|items:6|margin:10"
+ data-rewind="1" data-autoplay="1" data-loop="0" data-lazyload="0" data-mousedrag="1"
+ data-touchdrag="1" data-smartspeed="800" data-autoplayspeed="800" data-autoplaytimeout="5000"
+ data-dots="0" data-animations="" data-nav="0" data-navcontainer=".control-thanhtuu">
+ <?php $__currentLoopData = $thanhTuu; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div class="item-tt">
+ <div class="quantity-tt">
+ <span><?php echo \htmlentities($v['quantity']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ <h3 class="quantity-name"><?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></h3>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <div class="control-thanhtuu control-owl transition"></div>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+
+ <?php if($listProductNB->isNotEmpty()): ?>
+ <div class="position-relative padding-top-bottom">
+ <div class="wrap-content">
+ <div class="title-main" data-aos="fade-up" data-aos-duration="1000">
+ <h2>
+ <span>Chúng tôi có gì ?</span>
+ </h2>
+ <?php if(!empty($slogan1)): ?>
+ <p><?php echo \htmlentities($slogan1->namevi??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <?php endif; ?>
+ </div>
+ <div class="category">
+ <?php $__currentLoopData = $listProductNB; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $k => $v): $loop = $this->incrementLoopIndices();  ?>
+ <?php  $this->startComponent('component.itemProductList', ['product' => $v]); ?>
+ <?php echo $this->renderComponent(); ?>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+
+ <?php if($tieuchi->isNotEmpty()): ?>
+ <div class="wrap-tieuchi padding-top-bottom">
+ <div class="wrap-content">
+ <div class="title-tieuchi" data-aos="fade-up" data-aos-duration="1000">
+ <?php if(!empty($sloganTieuchi)): ?>
+ <span><?php echo \htmlentities($sloganTieuchi->namevi??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ <?php endif; ?>
+ </div>
+ <div class="content-tieuchi">
+ <div class="owl-page owl-carousel owl-theme"
+ data-items="screen:0|items:2|margin:5,screen:425|items:2|margin:5,screen:575|items:2|margin:10,screen:767|items:2|margin:10,screen:991|items:3|margin:10,screen:1199|items:3|margin:10"
+ data-rewind="1" data-autoplay="1" data-loop="0" data-lazyload="0" data-mousedrag="1"
+ data-touchdrag="1" data-smartspeed="800" data-autoplayspeed="800" data-autoplaytimeout="5000"
+ data-dots="0" data-animations="" data-nav="0" data-navcontainer="">
+ <?php $__currentLoopData = $tieuchi; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div class="item-tieuchi">
+ <div class="image-tieuchi">
+ <img onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/68x68x1/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('news', '', $v['photo'], '')??'', ENT_QUOTES, 'UTF-8', false); ?>" alt="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </div>
+ <div class="quantity-tieuchi">
+ <span>+</span>
+ <span><?php echo \htmlentities($v['quantity']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ <h3 class="name-tieuchi"><?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></h3>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+
+ <?php if($projectHot->isNotEmpty()): ?>
+ <div class="wrap-project padding-top-bottom overflow-hidden">
+ <div class="wrap-content">
+ <div class="title-main" data-aos="fade-up" data-aos-duration="1000">
+ <h2>
+ <span><?php echo \htmlentities(__('web.duan')??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </h2>
+ <?php if(!empty($slogan2)): ?>
+ <p><?php echo \htmlentities($slogan2->namevi??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <?php endif; ?>
+ </div>
+ </div>
+ <div class="row-project">
+ <div class="slide__project">
+ <?php $__currentLoopData = $projectHot; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div class="col-project">
+ <div class="item-project">
+ <a class="pic-project text-decoration-none scale-img hover-img"
+ href="<?php echo \htmlentities(url('slugweb', ['slug' => $v['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>" title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img class="w-100"
+ onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/1000x606x1/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('news', '1000x606x1', $v['photo'], 'thumbs')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </a>
+ <div class="info-project">
+ <span class="project-heading"><?php echo \htmlentities(__('web.duan')??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ <h3 class="mb-0"><a class="name-project transition text-split text-decoration-none"
+ href="<?php echo \htmlentities(url('slugweb', ['slug' => $v['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></a></h3>
+ <p class="desc-project text-split"><?php echo \htmlentities($v['descvi']??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <a href="<?php echo \htmlentities(url('slugweb', ['slug' => $v['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ class="btn-view text-decoration-none transition"
+ title="<?php echo \htmlentities(__('web.chitiet')??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities(__('web.chitiet')??'', ENT_QUOTES, 'UTF-8', false); ?></a>
+ </div>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+
+ <?php if($danhGia->isNotEmpty()): ?>
+ <div class="wrap-customer padding-top-bottom mg-bottom">
+ <div class="wrap-content">
+ <div class="title-main" data-aos="fade-up" data-aos-duration="1000">
+ <h2>
+ <span>Đánh giá của khách hàng</span>
+ </h2>
+ <?php if(!empty($slogan3)): ?>
+ <p class="text-white"><?php echo \htmlentities($slogan3->namevi??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <?php endif; ?>
+ </div>
+ <div class="position-relative">
+ <div class="owl-page owl-carousel owl-theme"
+ data-items="screen:0|items:1|margin:10,screen:425|items:1|margin:10,screen:575|items:2|margin:10,screen:767|items:2|margin:10,screen:991|items:3|margin:20,screen:1199|items:3|margin:20"
+ data-rewind="1" data-autoplay="1" data-loop="0" data-lazyload="0" data-mousedrag="1"
+ data-touchdrag="1" data-smartspeed="800" data-autoplayspeed="800" data-autoplaytimeout="5000"
+ data-dots="0"
+ data-animations="animate__fadeInDown, animate__backInUp, animate__rollIn, animate__backInRight, animate__zoomInUp, animate__backInLeft, animate__rotateInDownLeft, animate__backInDown, animate__zoomInDown, animate__fadeInUp, animate__zoomIn"
+ data-nav="0" data-navcontainer=".control-customer">
+ <?php $__currentLoopData = $danhGia; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div class="item-customer">
+ <div class="top-customer">
+ <div class="content-customer text-split"><?php echo \htmlentities($v['contentvi']??'', ENT_QUOTES, 'UTF-8', false); ?></div>
+ </div>
+ <div class="bottom-customer">
+ <div class="image-customer">
+ <img class="w-100"
+ onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/100x100x1/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('news', '100x100x1', $v['photo'], 'thumbs')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </div>
+ <div class="info-customer">
+ <h3 class="name-customer"><?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></h3>
+ <p class="desc-customer"><?php echo \htmlentities($v['descvi']??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ </div>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <div class="control-customer control-owl transition"></div>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+
+ <?php if($partner->isNotEmpty()): ?>
+ <div class="wrap-content">
+ <div class="d-flex flex-wrap">
+ <div class="title-partner" data-aos="fade-up" data-aos-duration="1000">
+ <span><?php echo \htmlentities(__('web.doitac')??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ <div class="content-partner" data-aos="fade-up" data-aos-duration="1000">
+ <div class="owl-page owl-carousel owl-theme"
+ data-items="screen:0|items:2|margin:10,screen:425|items:2|margin:10,screen:575|items:3|margin:10,screen:767|items:3|margin:10,screen:991|items:4|margin:10,screen:1199|items:5|margin:15"
+ data-rewind="1" data-autoplay="1" data-loop="0" data-lazyload="0" data-mousedrag="1"
+ data-touchdrag="1" data-smartspeed="800" data-autoplayspeed="800" data-autoplaytimeout="5000"
+ data-dots="0"
+ data-animations="animate__fadeInDown, animate__backInUp, animate__rollIn, animate__backInRight, animate__zoomInUp, animate__backInLeft, animate__rotateInDownLeft, animate__backInDown, animate__zoomInDown, animate__fadeInUp, animate__zoomIn"
+ data-nav="0" data-navcontainer=".control-ti">
+ <?php $__currentLoopData = $partner; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div>
+ <a class="text-decoration-none scale-img hover-img item-partner"
+ href="<?php echo \htmlentities($v['link']??'', ENT_QUOTES, 'UTF-8', false); ?>" target="_blank" title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img class="w-100"
+ onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/222x132x1/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('photo', '222x132x1', $v['photo'], 'thumbs')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+
+ <?php if($ketnoi->isNotEmpty()): ?>
+ <div class="position-relative padding-top-bottom">
+ <div class="wrap-content">
+ <div class="title-main" data-aos="fade-up" data-aos-duration="1000">
+ <h2>
+ <span>Kết nối với chúng tôi</span>
+ </h2>
+ <?php if(!empty($slogan4)): ?>
+ <p><?php echo \htmlentities($slogan4->namevi??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <?php endif; ?>
+ </div>
+ <div class="owl-page owl-carousel owl-theme"
+ data-items="screen:0|items:1|margin:0,screen:425|items:1|margin:0,screen:575|items:2|margin:20,screen:767|items:2|margin:20,screen:991|items:3|margin:20,screen:1199|items:3|margin:80"
+ data-rewind="1" data-autoplay="1" data-loop="0" data-lazyload="0" data-mousedrag="1"
+ data-touchdrag="1" data-smartspeed="800" data-autoplayspeed="800" data-autoplaytimeout="5000"
+ data-dots="0"
+ data-animations="animate__fadeInDown, animate__backInUp, animate__rollIn, animate__backInRight, animate__zoomInUp, animate__backInLeft, animate__rotateInDownLeft, animate__backInDown, animate__zoomInDown, animate__fadeInUp, animate__zoomIn"
+ data-nav="0" data-navcontainer=".control-ketnoi">
+ <?php $__currentLoopData = $ketnoi; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div>
+ <a class="text-decoration-none d-block item-ketnoi" href="<?php echo \htmlentities($v['link']??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ target="_blank" title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img class="w-100"
+ onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/380x366x1/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('photo', '380x366x1', $v['photo'], 'thumbs')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </a>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+
+
+ <div class="wrap-newsletter">
+ <div class="wrap-content">
+ <div class="newsletter__layout">
+ <div class="newsletter__start" data-aos="fade-up" data-aos-duration="1000">
+ <div class="title-newsletter">
+ <span>Liên hệ</span>
+ <?php if(!empty($slogan5)): ?>
+ <p><?php echo \htmlentities($slogan5->namevi??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ <?php endif; ?>
+ </div>
+ </div>
+ <div class="newsletter__end" data-aos="fade-up" data-aos-duration="1000">
+ <form class="form-newsletter validation-newsletter" id="newsletter-form" novalidate=""
+ method="POST" action="<?php echo \htmlentities(url('letter')??'', ENT_QUOTES, 'UTF-8', false); ?>" enctype="multipart/form-data">
+ <div class="dangky-layout">
+ <div class="dangky-left">
+ <div class="row-newsletter">
+ <div class="col-newsletter">
+ <div class="newsletter-input">
+ <img src="assets/images/lt-1.png" alt="icon">
+ <input type="text" class="form-control" id="ten-newsletter"
+ name="dataNewsletter[fullname]" value=""
+ placeholder="Họ và tên ..." required>
+ </div>
+ </div>
+ <div class="col-newsletter">
+ <div class="newsletter-input">
+ <img src="assets/images/lt-2.png" alt="icon">
+ <input type="text" class="form-control" id="address-newsletter"
+ name="dataNewsletter[address]" value="" placeholder="Địa chỉ ..."
+ required>
+ </div>
+ </div>
+ <div class="col-newsletter">
+ <div class="newsletter-input">
+ <img src="assets/images/lt-3.png" alt="icon">
+ <input type="tel" class="form-control" id="dienthoai-newsletter"
+ name="dataNewsletter[phone]" placeholder="Điện thoại ..." required>
+ </div>
+
+ </div>
+ <div class="col-newsletter">
+ <div class="newsletter-input">
+ <img src="assets/images/lt-4.png" alt="icon">
+ <input type="email" class="form-control" id="email-newsletter"
+ name="dataNewsletter[email]" placeholder="Email ..." required>
+ </div>
+ </div>
+
+ </div>
+ </div>
+ <div class="dangky-right">
+ <div class=" d-flex flex-wrap align-items-center">
+ <div class="newsletter-textarea">
+ <textarea class="form-control text-sm" id="content-newsletter" name="dataNewsletter[content]"
+ placeholder="Nội dung"></textarea>
+ </div>
+ <div class="newsletter-button">
+ <input type="button"
+ onclick="submit_form_check_recaptcha('newsletter-form','newsletter','recaptchaResponseNewsletter')"
+ class="btn btn-danger" value="Gửi" />
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <input type="hidden" name="csrf_token" value="<?php echo \htmlentities(csrf_token()??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <input type="hidden" class="btn w-100" name="submit-newsletter" value="ok">
+ <input type="hidden" name="recaptcha_response_newsletter" id="recaptchaResponseNewsletter">
+ </form>
+ </div>
+ </div>
+ </div>
+ </div>
+
+ <?php if($listNewsHot->isNotEmpty()): ?>
+ <div class="wrap-list-tintuc pad-top">
+ <div class="wrap-content">
+ <div class="list-tintuc-row row-tintuc-index">
+ <?php if($listNewsHot[0]->getItemsNB()->get()->isNotEmpty()): ?>
+ <div class="list-tintuc-col col-tintuc-index">
+ <div class="title-list-tintuc">
+ <span><?php echo \htmlentities($listNewsHot[0]['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ <div class="mg-tintuc">
+ <div class="slide__tintuc__left">
+ <?php $__currentLoopData = $listNewsHot[0]->getItemsNB()->get() ?? []; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div class="col-tintuc">
+ <div class="position-relative">
+ <a class="text-decoration-none scale-img hover-img"
+ href="<?php echo \htmlentities(url('slugweb', ['slug' => $v['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img class="w-100"
+ onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/345x167x1/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('news', '345x167x1', $v['photo'], 'thumbs')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </a>
+ <div class="times-tintuc">
+ <strong><?php echo \htmlentities(date('d', $v['date_created'])??'', ENT_QUOTES, 'UTF-8', false); ?></strong>
+ <span>T<?php echo \htmlentities(date('m', $v['date_created'])??'', ENT_QUOTES, 'UTF-8', false); ?>-<?php echo \htmlentities(date('Y', $v['date_created'])??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ </div>
+ <div class="info-tintuc">
+ <h3 class="mb-0 text-center"><a
+ class="name-tintuc transition text-split text-decoration-none"
+ href="<?php echo \htmlentities(url('slugweb', ['slug' => $v['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></a></h3>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+
+ </div>
+ <?php endif; ?>
+
+ <?php if($listNewsHot[1]->getItemsNB()->get()->isNotEmpty()): ?>
+ <div class="list-tintuc-col col-tintuc-index">
+ <div class="title-list-tintuc">
+ <span><?php echo \htmlentities($listNewsHot[1]['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ <div class="owl-page owl-carousel owl-theme"
+ data-items="screen:0|items:1|margin:0,screen:425|items:1|margin:0,screen:575|items:1|margin:0,screen:767|items:1|margin:0,screen:991|items:1|margin:0,screen:1199|items:1|margin:0"
+ data-rewind="1" data-autoplay="1" data-loop="0" data-lazyload="0" data-mousedrag="1"
+ data-touchdrag="1" data-smartspeed="800" data-autoplayspeed="800"
+ data-autoplaytimeout="5000" data-dots="0"
+ data-animations="animate__fadeInDown, animate__backInUp, animate__rollIn, animate__backInRight, animate__zoomInUp, animate__backInLeft, animate__rotateInDownLeft, animate__backInDown, animate__zoomInDown, animate__fadeInUp, animate__zoomIn"
+ data-nav="0" data-navcontainer="">
+ <?php $__currentLoopData = $listNewsHot[1]->getItemsNB()->get() ?? []; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div>
+ <div class="position-relative">
+ <a class="text-decoration-none scale-img hover-img"
+ href="<?php echo \htmlentities(url('slugweb', ['slug' => $v['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img class="w-100"
+ onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/635x325x1/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('news', '635x325x1', $v['photo'], 'thumbs')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </a>
+ <div class="times-tintuc">
+ <strong><?php echo \htmlentities(date('d', $v['date_created'])??'', ENT_QUOTES, 'UTF-8', false); ?></strong>
+ <span>T<?php echo \htmlentities(date('m', $v['date_created'])??'', ENT_QUOTES, 'UTF-8', false); ?>-<?php echo \htmlentities(date('Y', $v['date_created'])??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ </div>
+ <div class="info-tintuc p-4">
+ <h3 class="mb-3 text-start"><a
+ class="name-tintuc transition text-split text-decoration-none"
+ href="<?php echo \htmlentities(url('slugweb', ['slug' => $v['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></a></h3>
+ <p class="desc-tintuc text-split mb-0"><?php echo \htmlentities($v['descvi']??'', ENT_QUOTES, 'UTF-8', false); ?></p>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ <?php endif; ?>
+
+ <?php if($listNewsHot[2]->getItemsNB()->get()->isNotEmpty()): ?>
+ <div class="list-tintuc-col col-tintuc-index">
+ <div class="title-list-tintuc">
+ <span><?php echo \htmlentities($listNewsHot[2]['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ <div class="mg-tintuc">
+ <div class="slide__tintuc__right">
+ <?php $__currentLoopData = $listNewsHot[2]->getItemsNB()->get() ?? []; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $v): $loop = $this->incrementLoopIndices();  ?>
+ <div class="col-tintuc">
+ <div class="d-flex flex-wrap">
+ <div class="image-tintuc-right position-relative">
+ <a class="text-decoration-none scale-img hover-img"
+ href="<?php echo \htmlentities(url('slugweb', ['slug' => $v['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ <img class="w-100"
+ onerror="this.src='<?php echo \htmlentities(thumbs('thumbs/180x136x1/assets/images/noimage.png')??'', ENT_QUOTES, 'UTF-8', false); ?>';"
+ src="<?php echo \htmlentities(assets_photo('news', '180x136x1', $v['photo'], 'thumbs')??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ alt="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>">
+ </a>
+ <div class="times-tintuc">
+ <strong><?php echo \htmlentities(date('d', $v['date_created'])??'', ENT_QUOTES, 'UTF-8', false); ?></strong>
+ <span>T<?php echo \htmlentities(date('m', $v['date_created'])??'', ENT_QUOTES, 'UTF-8', false); ?>-<?php echo \htmlentities(date('Y', $v['date_created'])??'', ENT_QUOTES, 'UTF-8', false); ?></span>
+ </div>
+ </div>
+ <div class="info-tintuc-right">
+ <div class="info-tintuc h-100">
+ <h3 class="mb-0"><a
+ class="name-tintuc transition text-split text-decoration-none"
+ href="<?php echo \htmlentities(url('slugweb', ['slug' => $v['slugvi']])??'', ENT_QUOTES, 'UTF-8', false); ?>"
+ title="<?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?>"><?php echo \htmlentities($v['namevi']??'', ENT_QUOTES, 'UTF-8', false); ?></a></h3>
+ </div>
+ </div>
+ </div>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+ </div>
+ </div>
+ </div>
+ <?php endif; ?>
+<?php $this->stopSection(); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout'); } ?>

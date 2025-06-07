@@ -1,0 +1,22 @@
+<?php $_shouldextend[1]=1; ?>
+<?php $this->startSection('content'); ?>
+ <section>
+ <?php if($news->isNotEmpty()): ?>
+ <div class="max-width padding-top-bottom">
+ <div class="row">
+ <?php $__currentLoopData = $news; $this->addLoop($__currentLoopData);$this->getFirstLoop();
+ foreach($__currentLoopData as $k => $v): $loop = $this->incrementLoopIndices();  ?>
+ <div class="col-md-6 mb-3">
+ <?php  $this->startComponent('component.itemNews', ['news' => $v]); ?>
+ <?php echo $this->renderComponent(); ?>
+ </div>
+ <?php endforeach; $this->popLoop(); $loop = $this->getFirstLoop(); ?>
+ </div>
+ <?php echo $news->links(); ?>
+
+ </div>
+ <?php endif; ?>
+ </section>
+<?php $this->stopSection(); ?>
+
+<?php if (isset($_shouldextend[1])) { echo $this->runChild('layout'); } ?>
